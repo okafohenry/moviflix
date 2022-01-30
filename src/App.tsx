@@ -1,14 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import { AppPageLayout, TrendingMovies} from './components';
+import { API_KEY, baseUrl } from './utilities';
+import { TrendingMovieModel, TrendingMovieResultModel } from './types/models'; 
 
-const App = () => {
+
+
+const Moviflix = () => {
+    const [movies, setMovies] = useState<TrendingMovieResultModel[]>([]);
+  useEffect(() => {    
+    fetch(`${baseUrl}trending/all/day?api_key=${API_KEY}`)
+    .then(response => response.json())
+    .then(data => {
+      setMovies(data.results);  
+    }) 
+    .catch(err => console.log(err));  
+  });
+
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Moviflix</h1>
-      </header>
+      <AppPageLayout>
+        <TrendingMovies movies={movies} />
+      </AppPageLayout>   
     </div>
-  );
+    );
 }
 
-export default App;
+export default Moviflix;
