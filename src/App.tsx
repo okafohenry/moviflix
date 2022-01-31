@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { AppPageLayout, TrendingMovies} from './components';
+import { AppPageLayout, SelectedMovie, TrendingMovies} from './components';
 import { API_KEY, baseUrl } from './utilities';
-import { TrendingMovieModel, TrendingMovieResultModel } from './types/models'; 
+import { TrendingMovieResultModel } from './types/models'; 
 
 
 

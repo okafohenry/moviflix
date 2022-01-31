@@ -1,12 +1,20 @@
-import React from 'react';
 import { Logo, NavLinks, Search } from './';
+import styled from 'styled-components';
+
+const NavContainer = styled.nav`
+    display: flex;
+    justify-content: space-between;
+    background: #ababab;
+    align-items: center;
+    padding: 25px 5%;
+`;
 
 export const Nav = () => {
     return(
-        <nav>
+        <NavContainer>
             <Logo />
-            <NavLinks />
+            <NavLinks /> 
             <Search />
-        </nav>
+        </NavContainer>
     )
 }

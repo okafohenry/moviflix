@@ -1,3 +1,9 @@
+import styled from 'styled-components';
+
+const SearchIcon = styled.div`
+    font-size: 12px;
+`;
+
 export const Search = () => (
-    <i>search icon</i>
+    <SearchIcon>search icon</SearchIcon>
 )
