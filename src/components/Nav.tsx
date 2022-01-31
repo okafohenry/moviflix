@@ -4,9 +4,10 @@ import styled from 'styled-components';
 const NavContainer = styled.nav`
     display: flex;
     justify-content: space-between;
-    background: #ababab;
+    background: transparent;
     align-items: center;
-    padding: 25px 5%;
+    padding: 15px 5%;
+    border-bottom: 1px solid #ebebeb;
 `;
 
 export const Nav = () => {

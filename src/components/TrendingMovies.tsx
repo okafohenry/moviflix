@@ -1,21 +1,29 @@
 import { TrendingMovieResultModel } from "../types/models";
 import styled from "styled-components";
 
-const Wrapper = styled.div`
-    display: inline-block; 
-    white-space: nowrap;
+
+interface WrapperProps {
+    allMovies: TrendingMovieResultModel[]
+}
+
+const Wrapper = styled.div<WrapperProps>`
+    width: 100%;
+    overflow: scroll;
+    padding: 0 20px;
+    display: inline-grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(${props => props.allMovies.length}, 1fr);
+    scroll-behavior: smooth;
+
+    position: fixed;
+    bottom: 0;
 
     .movie-card {
-        width: 170px;
-        padding: 10px;
-        background: red;
     }
 
-    .movie-title{
-        width: 100%;
-        white-space: nowrap;
-        overflow: break;
-        text-overflow: break;
+    .movie-title {
+        inline-size: 150px;
+        word-break: break-all
     }
 
     /* width */
@@ -36,9 +44,10 @@ const Wrapper = styled.div`
     }
 `;
 
+
 export const TrendingMovies = (props:{movies: TrendingMovieResultModel[]}) => {
     return(
-        <Wrapper>
+        <Wrapper allMovies={props.movies}>
             { props.movies.map((movie:TrendingMovieResultModel) => { 
                 const {id, poster_path, backdrop_path, title, original_name} = movie;
                 return( 
@@ -46,7 +55,7 @@ export const TrendingMovies = (props:{movies: TrendingMovieResultModel[]}) => {
                         <img 
                         src={`https://image.tmdb.org/t/p/w500/${poster_path?poster_path:backdrop_path}`}  
                         alt={`${title? title: original_name}.jpg`}  
-                        width="150px" height="200px" />
+                        width="150px" height="150px" />
                         <div className="movie-title">
                             <h4>{title ? title : original_name}</h4>
                         </div>
