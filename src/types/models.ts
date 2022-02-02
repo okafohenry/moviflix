@@ -22,4 +22,23 @@ export interface TrendingMovieResultModel{
     popularity: number; 
     media_type: string;
     original_name?: string;
+    rating?: string;
+}
+
+export interface SelectedMovieModel {
+    adult?: boolean;
+    backdrop_path?: string;
+    genre_ids?: number[];
+    title?: string;
+    original_language?: string;
+    original_title?: string;
+    poster_path?: string;
+    video: boolean;
+    vote_average: number;
+    vote_count: number;
+    overview: string;
+    release_date: string;
+    id: number;
+    popularity?: number;
+    media_type?: string;
 }

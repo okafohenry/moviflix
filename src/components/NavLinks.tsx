@@ -10,7 +10,7 @@ const Menu = styled.ul`
 
         a {
             text-decoration: none;
-            padding: 29px;
+            padding: 20px 25px;
             transition: all 0.3s ease 0s;
         }
         a:hover {

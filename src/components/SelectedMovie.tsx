@@ -1,23 +1,15 @@
-import { type } from 'os';
-import React from 'react';
 import { MovieTitle, Rating, MovieTag, Button, MovieDescription } from "./";
+import { SelectedMovieModel } from "../types/models";
 
-type MovieProps = {
-    title: string;
-    rating: string; 
-    tags: string[]; 
-    description: string;
-}
-
-export const SelectedMovie  = (props: MovieProps) => {
+export const SelectedMovie  = (props: {movie: SelectedMovieModel}) => {
     return(
         <div>
-            <MovieTitle title={props.title} />
-            <Rating rating={props.rating} />
-            <MovieTag tags={props.tags} />
+            <MovieTitle title={props.movie.title} />
+            <Rating rating={props.movie.vote_average} />
+            {/* <MovieTag tags={props.movie.tags} /> */}
             <Button text= "Download" />
             <Button text="save for later" />
-            <MovieDescription description={props.description} />
+            <MovieDescription description={props.movie.overview} />
         </div>
     )
 }
