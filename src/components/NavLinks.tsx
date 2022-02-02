@@ -12,9 +12,10 @@ const Menu = styled.ul`
             text-decoration: none;
             padding: 20px 25px;
             transition: all 0.3s ease 0s;
+            color: #14c6b2;
         }
         a:hover {
-            border-bottom: 1px solid red;
+            border-bottom: 1px solid #14c6b2;
         }
     }
 

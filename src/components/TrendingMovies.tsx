@@ -18,7 +18,10 @@ const Wrapper = styled.div<WrapperProps>`
     bottom: 0;
 
     .movie-title {
-        inline-size: 150px;
+        font-size: 13px;
+        text-transform: capitalise;
+        padding-top: 10px;
+        inline-size: 107px;
         word-break: break-all
     }
 
@@ -41,10 +44,12 @@ const Wrapper = styled.div<WrapperProps>`
 
     .movie-card:hover {
         img {
-            width: 160px;
-            height: 160px;
+            width: 130px;
+            height: 200px;
             cursor: pointer;
         }
+        .movie-title {
+            inline-size: 120px;
     }
 `;
 
@@ -59,7 +64,7 @@ export const TrendingMovies = (props:{movies: TrendingMovieResultModel[]}) => {
                         <img 
                         src={`https://image.tmdb.org/t/p/w500/${poster_path?poster_path:backdrop_path}`}  
                         alt={`${title ? title : original_name}.jpg`}  
-                        width="150px" height="150px" />
+                        width="110px" height="160px" />
                         <div className="movie-title">
                             <h4>{title ? title : original_name}</h4>
                         </div>
